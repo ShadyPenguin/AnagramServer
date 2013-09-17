@@ -1,4 +1,14 @@
 get '/' do
-  # Look in app/views/index.erb
   erb :index
 end
+
+post '/anagram' do
+  @word = Word.anagrams_for(params[:user_input])
+  erb :anagram
+end
+
+
+# get '/:word' do
+#   @word = Word.anagrams_for(params[:user_input])
+#   erb :anagram
+# end
