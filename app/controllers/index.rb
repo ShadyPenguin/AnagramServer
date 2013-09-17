@@ -4,7 +4,11 @@ end
 
 post '/anagram' do
   @word = Word.anagrams_for(params[:user_input])
-  erb :anagram
+  if @word.length > 0
+    erb :anagram
+  else 
+    erb :foo
+  end
 end
 
 

@@ -1,1 +1,5 @@
-<%= @word.first.word %>
+
+
+<% @word.each do |i| %>
+<h1><%= i.word %></h1>
+ <% end %>
